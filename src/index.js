@@ -1,14 +1,11 @@
-import multiplier from './some-file.js'
-import { format } from 'date-fns/esm'
+import multiplier from './multiplier.js'
 
-const sleep = milliseconds => {
-	return new Promise(resolve => setTimeout(resolve, milliseconds))
-}
+const promise1 = new Promise(function(resolve, reject) {
+	setTimeout(function() {
+		resolve(multiplier)
+	}, 300)
+})
 
-export async function someMaths() {
-	console.log(multiplier)
-	console.log(5 * multiplier)
-	console.log(10 * multiplier)
-	await sleep(1000)
-	console.log(format(new Date(), "'Today is a' iiii"))
-}
+promise1.then(res => {
+	console.log(res)
+})

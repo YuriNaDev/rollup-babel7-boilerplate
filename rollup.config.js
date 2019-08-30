@@ -7,11 +7,11 @@ export default {
 	input: './src/index.js',
 	output: {
 		file: './dist/bundle.js',
-		name: 'myRollupBundle',
 		format: 'umd',
+		// name: 'myRollupBundle',
 	},
 	plugins: [
-		resolve(), // resolve({ jsnext: true, main: true })
+		resolve(),
 		commonjs(),
 		babel({
 			exclude: ['node_modules/**'],
